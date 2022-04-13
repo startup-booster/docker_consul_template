@@ -64,7 +64,7 @@ RUN apt-get update \
 RUN     rm /etc/nginx/sites-enabled/default
 VOLUME  templates
 COPY ./template /templates
-COPY ./html /var/www/html
+COPY ./html /var/www/htm
 
 
 
