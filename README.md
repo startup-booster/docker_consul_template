@@ -72,6 +72,28 @@ server{
 
 ```
 
+
+```json
+server{
+			listen 80;
+
+
+
+			location /especial {
+			 rewrite ^/especial(.*) $1 break;
+			 proxy_set_header X-Real-IP $remote_addr;
+    	 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+			 proxy_pass "http://sharkpackschool.com/";
+       proxy_ssl_session_reuse off;
+    	 proxy_cache_bypass $http_upgrade;
+			}
+}
+
+
+```
+
+
+
 #### Debuging can be done by :
 
 * Accessing the docker container and performing 
