@@ -54,6 +54,23 @@ server {
   }
 }
 ```
+or 
+```json
+server{
+			listen 80;
+  
+			location / {
+			 proxy_pass "http://143.198.240.53";
+			}
+
+			location /especial {
+			 rewrite ^/codify(.*) $1 break;
+			 proxy_pass "http://info.cern.ch/";
+			}
+}
+
+
+```
 
 #### Debuging can be done by :
 
